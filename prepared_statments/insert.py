@@ -1,42 +1,20 @@
+# trying to see if assertEqual(websql, sqlite) is True
 import websql as db
 import sys
 
 connection = db.connect("rel.db")
 
-from objects import cars
+from objects import cars, stmt
 from cars import example
 from example import Car, CARLIST
 
 test = CARLIST
 
-key_stmt          = []
-safe_stmt         = []
-def define_dbstmt():
-	"""
-	Database statement definitions
-	"""
-	key_stmt.iff  = ["IF EXISTS ",]
-	key_stmt.drop = ["DROP TABLE ",]
-	key_stmt.make = ["CREATE TABLE ",]
-	key_stmt.insert = ["INSERT INTO "]
-
-class PyDbTest(Car):
-	"""
-	Checks the id()
-	"""
-	safe_id = []
-	def __init__(self, car):
-		super(P, self).__init__()
-		self.car = car
-	def valid_set(CARLIST):
-		for Car in CARLIST:
-			safe_id[car] = car.id()
-	def __isset__(self):
-		return safe_id
-
+from stmt import key_stmt, safe_stmt
 
 def connect_toworld(PyDbTest):
-	if online:
+	"""Environment for insertion"""
+	with online:
 		MyRDB = ['db':{label, set_table}]
 		MyRDB.label = 'Cars'
 		MyRDB.set_table = ["Cars(Id INT, Name TEXT," +

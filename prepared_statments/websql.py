@@ -1,13 +1,18 @@
 import websql as db
 import sys
 
+from objects import stmt
+from stmt import key_stmt, safe_stmt
+
 connection = None
 
 try:
-	connection = db.connect("./bin/test.db")
+	connection = db.connect("./bin/js/websql/test.js")
+
+	connection.websql_version = "WEBSQL_VERSION();\r\n"
 
 	cursor = connection.cursor()
-	cursor.excecute("SELECT WEBSQL_VERSION()")
+	cursor.excecute(key_stmt.select + connection.websql_version)
 
 	data = cursor.fetchone()
 
@@ -20,5 +25,6 @@ except db.Error, e:
 	sys.exit(1)
 
 finally:
-	if connection:
-		connection.close()
+	while True:
+		if connection:
+			connection.close()

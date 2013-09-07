@@ -1,0 +1,5 @@
+*.swp
+*~
+./bin/dart
+./bin/db/websql/foods.yml
+/id_lists/
