@@ -1,5 +1,7 @@
 ## Contributing
 
+Pull Requests should be made to coreywu/JSONScraper.
+
 ### Todo
 
 <ul>

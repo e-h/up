@@ -30,6 +30,6 @@ def connect_toworld(PyDbTest):
   cursor.excecute(key_stmt.drop + key_stmt.iff + MyRDB.label)
   cursor.excecute(key_stmt.make + MyRDB.set_table)
 
-  #iterate through cars
+  # iterate through cars
   for car in test:
     cursor.excecute(key_stmt.insert + MyRDB.label + (car as Car))

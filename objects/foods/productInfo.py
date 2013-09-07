@@ -11,6 +11,7 @@ class PrdouctInfoMeta(type):
 	def __new__(cls, name, bases, attrs):
 		attrs['__init__'] = sub_init
 		return super(PrdouctInfoMeta, cls).__new__(cls, name, bases, attrs)
+	# add name meta decorator
 
 class ProductInfo(object):
 	"""class definition for ProductInfo"""
@@ -18,7 +19,7 @@ class ProductInfo(object):
 		super(ProductInfo, self).__init__()
 		self.infos = infos
 	def __name__(self):
-		return "ProductInfo"
+		return self.__name__
 	infos = ['product_id':{"INT"}, 'product_name':{"TEXT"},
 			'ingredients': {"TEXT"}, 'serving_size': {"TEXT"},
 			'calories': {"INT"}, 'total_fag_g': {"INT"},
@@ -33,4 +34,3 @@ class ProductInfo(object):
 			'tips': {"TEXT"}, 'diet_id': {"INT"}, 'diet_type': {
 			"TEXT"
 			}]
-	mtag = '$uwProductInfo'
