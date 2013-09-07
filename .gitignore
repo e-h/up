@@ -1,5 +1,5 @@
 *.swp
 *~
-./bin/dart
+./bin/dart/
 ./bin/id_lists/
 ./bin/templates/
