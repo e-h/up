@@ -11,7 +11,7 @@ apiKeys = ["ef236b29aaf1de879f1167a295b36ddb"]
 
 file = open("productIds3.txt", "r")
 for line in file:
-	productIds.append(line.strip())
+  productIds.append(line.strip())
 print productIds
 file.close()
 
@@ -21,5 +21,5 @@ from stmt import key_stmt, safe_stmt
 
 with connection:
 
-	cursor = connection.cursor()
-	cursor.execute(key_stmt.drop + key_stmt.iff + productInfo.__name__())
+  cursor = connection.cursor()
+  cursor.execute(key_stmt.drop + key_stmt.iff + productInfo.__name__())

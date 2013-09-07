@@ -1,4 +1,3 @@
-# trying to see if assertEqual(websql, sqlite) is True
 import websql as db
 import sys
 
@@ -13,25 +12,24 @@ test = CARLIST
 from stmt import key_stmt, safe_stmt
 
 def connect_toworld(PyDbTest):
-	"""Environment for insertion"""
-	with online:
-		MyRDB = ['db':{label, set_table}]
-		MyRDB.label = 'Cars'
-		MyRDB.set_table = ["Cars(Id INT, Name TEXT," +
-			" Price INT);\n"]
+  """Environment for insertion"""
+  with online:
+    MyRDB = ['db':{label, set_table}]
+    MyRDB.label = 'Cars'
+    MyRDB.set_table = ["Cars(Id INT, Name TEXT, Price INT);\n"]
 
-		# check the db
-		try:
-			cursor = online.cursor()
-		except Exception, e:
-			raise "CursorNotFound"
-		else:
-			pass
-		finally:
-			online = db.disconnect("rel.db")
+  try:
+    cursor = online.cursor()
+  except Exception, e:
+    raise "CursorNotFound"
+  else:
+    pass
+  finally:
+    online = db.disconnect("rel.db")
 
-		cursor.excecute(key_stmt.drop + key_stmt.iff + MyRDB.label)
-		cursor.excecute(key_stmt.make + MyRDB.set_table)
+  cursor.excecute(key_stmt.drop + key_stmt.iff + MyRDB.label)
+  cursor.excecute(key_stmt.make + MyRDB.set_table)
 
-		for car in test:
-			cursor.excecute(key_stmt.insert + MyRDB.label + (car as Car))
+  #iterate through cars
+  for car in test:
+    cursor.excecute(key_stmt.insert + MyRDB.label + (car as Car))

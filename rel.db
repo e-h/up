@@ -1,7 +1,0 @@
-#!/usr/bin/env py
-
-class Db:
-	pass
-
-class RenderDb(Db):
-	

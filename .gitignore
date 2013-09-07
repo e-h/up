@@ -1,5 +1,5 @@
 *.swp
 *~
 ./bin/dart
-./bin/db/websql/foods.yml
-/id_lists/
+./bin/id_lists/
+./bin/templates/
