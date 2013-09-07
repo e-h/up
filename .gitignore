@@ -1,5 +1,2 @@
 *.swp
 *~
-*./bin/dart/JSONParsing
-*./bin/id_lists
-*./bin/templates
