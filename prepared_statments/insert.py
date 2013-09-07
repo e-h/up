@@ -1,7 +1,7 @@
 import websql as db
 import sys
 
-connection = db.connect("rel.db")
+connection = db.connect("objects/cars/example.py")
 
 from objects import cars, stmt
 from cars import example

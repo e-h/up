@@ -10,15 +10,15 @@ class CarMeta(type):
       ), 'Car', bases, attributes)
   """
   def __new__(cls, name, bases, attrs):
-	attrs['__init__'] = sub_init
-	return super(CarMeta, cls).__new__(cls, name, bases, attrs)
+    attrs['__init__'] = sub_init
+    return super(CarMeta, cls).__new__(cls, name, bases, attrs)
 
 class Car(object):
   """Defintion for database"""
   __metaclass__ = CarMeta
 
-	def __init__(self, id, name, price):
-		self.data = [self.id, self.name, self.price]
+  def __init__(self, id, name, price):
+    self.data = [self.id, self.name, self.price]
 
 CARLIST = {'first':[1, 'Audi', 52642],
            'second':[2, 'Mercedes', 57127],
