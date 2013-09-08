@@ -5,22 +5,30 @@ from example import CARLIST
 key_stmt          = []
 safe_stmt         = []
 
-def define_dbstmt():
-  """
-  Database statement definitions
-  """
-  key_stmt.iff  = ["IF EXISTS "]
-  key_stmt.drop = ["DROP TABLE "]
-  key_stmt.make = ["CREATE TABLE "]
-  key_stmt.insert = ["INSERT INTO "]
-  key_stmt.select = ["SELECT "]
+class Statement():
+  """Define inputs for queries"""
+  def __init__(self):
+  	"""Removes any existing def'n"""
+    if key_stmt:
+      key_stmt = None
+    elif safe_stmt:
+      safe_stmt = None
+    key_stmt, safe_stmt = []
+  def define_dbstmt():
+    """Database statement definitions"""
+    key_stmt.iff  = ["IF EXISTS "]
+    key_stmt.drop = ["DROP TABLE "]
+    key_stmt.make = ["CREATE TABLE "]
+    key_stmt.insert = ["INSERT INTO "]
+    key_stmt.select = ["SELECT "]
 
 class PyDbTest():
   """
-  Checks the id()
+  Checks the id() before insertion
   """
   safe_id = []
   cars    = CARLIST
+  define_dbstmt()
   def __init__(self, car):
     super(P, self).__init__()
     self.car = car
