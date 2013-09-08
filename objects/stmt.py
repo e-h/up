@@ -1,6 +1,4 @@
-from objects import cars
-from cars import example
-from example import CARLIST
+from objects/cars/example import Car, CARLIST
 
 key_stmt          = []
 safe_stmt         = []
